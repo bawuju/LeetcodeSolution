@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 # -*- encoding: utf-8 -*-
 
+"""
+将乘法分解
+第一步分解第一个数字，变成单位数*多位数，然后结尾补上0
+第二步将第二个数字也分解，变成单位数*单位数，然后结尾补上0
+"""
+
 
 class Solution:
     def multiply(self, num1, num2):

@@ -20,7 +20,6 @@ class Solution:
         :type intervals: List[Interval]
         :rtype: List[Interval]
         """
-        assert isinstance(intervals, list)
         intervals.sort(key=lambda i: i.start)
         tmp = []
         for i in intervals:
