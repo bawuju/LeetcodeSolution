@@ -2,8 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 """
-只是递归扫描并标记已经被扫描过的，没啥特殊
-要注意的是一个人只和自己作为朋友，也可以成为一个朋友圈
+并集查找
 """
 
 
@@ -13,32 +12,38 @@ class Solution:
         :type M: List[List[int]]
         :rtype: int
         """
-        tmp = []
         student_num = len(M)
+        data = [i for i in range(student_num)]
         for i in range(student_num):
-            tmp.append([])
             for j in range(student_num):
-                tmp[i].append(False)
+                if M[i][j] == 1:
+                    Solution.union(data, i, j)
         circle_num = 0
-        for i in range(student_num):
-            for j in range(student_num):
-                if tmp[i][j]:
-                    continue
-                if M[i][j] == 1:  # 如果i和j是朋友，并且没有被扫描过，那就从这两个人的关系开始扫描
-                    circle_num += 1
-                    Solution.scan(M, tmp, i)
-                    Solution.scan(M, tmp, j)
+        for index in range(len(data)):
+            if data[index] == index:
+                circle_num += 1
         return circle_num
 
     @staticmethod
-    def scan(M, tmp, i):
-        student_num = len(M)
-        for target_j in range(student_num):  # 扫描每一个人，判断他跟i是不是朋友，如果是的话，递归扫描下去
-            if M[i][target_j] == 1 and not tmp[i][target_j]:
-                # 朋友关系是相互的
-                tmp[i][target_j] = True
-                tmp[target_j][i] = True
-                Solution.scan(M, tmp, target_j)
+    def find(data, i):
+        length = 0
+        while data[i] != i:
+            i = data[i]
+            length += 1
+        return data[i], length
+
+    @staticmethod
+    def union(data, i, j):
+        if i == j:
+            return
+        root_i, length_i = Solution.find(data, i)
+        root_j, length_j = Solution.find(data, j)
+        if root_i == root_j:
+            return
+        if length_i < length_j:
+            data[root_i] = data[root_j]
+        else:
+            data[root_j] = data[root_i]
 
 
 if __name__ == '__main__':
