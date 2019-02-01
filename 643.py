@@ -22,7 +22,7 @@ class Solution:
             sum_loop += nums[index]
         average = sum_loop / k
         return average
-        
+
 
 if __name__ == '__main__':
-    assert Solution().findMaxAverage([1,12,-5,-6,50,3], 4) == 12.75
+    assert Solution().findMaxAverage([1, 12, -5, -6, 50, 3], 4) == 12.75

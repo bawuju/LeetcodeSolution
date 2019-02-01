@@ -20,6 +20,7 @@ class Solution(object):
                     return True
         return False
 
+
 if __name__ == '__main__':
     assert Solution().isSubsequence('abc', 'ahbgdc')
     assert not Solution().isSubsequence('axc', 'ahbgdc')

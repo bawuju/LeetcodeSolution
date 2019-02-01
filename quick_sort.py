@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- encoding: utf-8 -*-
-import random
 import multiprocessing
+import random
 
 """
 快速排序例子（三向切分）

@@ -35,7 +35,13 @@ class Solution(object):
 
 
 if __name__ == '__main__':
-    assert Solution().findRestaurant(["Shogun", "Tapioca Express", "Burger King", "KFC"], ["KFC", "Shogun", "Burger King"]) == ["Shogun"]
-    assert Solution().findRestaurant(["Shogun", "Tapioca Express", "Burger King", "KFC"], ["Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"]) == ["Shogun"]
-    assert Solution().findRestaurant(["Shogun","Tapioca Express","Burger King","KFC"], ["KFC","Burger King","Tapioca Express","Shogun"]) == ["KFC","Burger King","Tapioca Express","Shogun"]
+    assert Solution().findRestaurant(["Shogun", "Tapioca Express", "Burger King", "KFC"],
+                                     ["KFC", "Shogun", "Burger King"]) == ["Shogun"]
+    assert Solution().findRestaurant(["Shogun", "Tapioca Express", "Burger King", "KFC"],
+                                     ["Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"]) == [
+               "Shogun"]
+    assert Solution().findRestaurant(["Shogun", "Tapioca Express", "Burger King", "KFC"],
+                                     ["KFC", "Burger King", "Tapioca Express", "Shogun"]) == ["KFC", "Burger King",
+                                                                                              "Tapioca Express",
+                                                                                              "Shogun"]
     assert Solution().findRestaurant(["k", "KFC"], ["k", "KFC"]) == ["k"]

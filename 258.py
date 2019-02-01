@@ -19,7 +19,7 @@ class Solution:
             sum_digits += num % 10
             num //= 10
         return sum_digits
-        
+
 
 if __name__ == '__main__':
     assert Solution().addDigits(38) == 2
