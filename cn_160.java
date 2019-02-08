@@ -55,7 +55,7 @@ public class Algorithm {
                 a = a.next;
             }
             while (a != null && b != null) {
-                if (a.val == b.val) {
+                if (a == b) {
                     return a;
                 }
                 a = a.next;
@@ -80,4 +80,5 @@ public class Algorithm {
     }
 
 }
+
 
